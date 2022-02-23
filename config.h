@@ -1,6 +1,6 @@
 static struct Config config = {
 	/* font, separate different fonts with comma */
-	.font = "Ubuntu:size=9,DejaVuSansMono:size=9",
+	.font = "Ubuntu:size=9,DejaVuSansMono:size=9,JoyPixels:pixelsize=14:antialias=true:autohint=true",
 
 	/* colors */
 	.background_color = "#282a36",
