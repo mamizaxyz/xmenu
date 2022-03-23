@@ -14,6 +14,7 @@ System Utilities
 	🧮 Galculator	galculator
 	🖥️ Htop	$TERMINAL -e htop
 	🎵 Pavucontrol	pavucontrol
+	🫐 Blueman	blueman-manager
 	📁 Thunar	thunar
 	🖼️ Xwallpaper	$TERMINAL -e sxiv -bt "$HOME/.local/share/wallpapers"
 
