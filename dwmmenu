@@ -1,0 +1,48 @@
+#!/bin/sh
+
+xmenu <<EOF | sh&
+Web
+	🕸 Web Browser	$BROWSER
+	🌐 Network Settings	$TERMINAL -e nmtui
+
+Development
+	🐄 Emacs	emacs
+
+System Utilities
+	🖥️ Terminal	$TERMINAL
+	🖥️ XTerm	xterm
+	🧮 Galculator	galculator
+	🖥️ Htop	$TERMINAL -e htop
+	🎵 Pavucontrol	pavucontrol
+	🫐 Blueman	blueman-manager
+	📁 Thunar	thunar
+	🖼️ Xwallpaper	$TERMINAL -e sxiv -bt "$HOME/.local/share/wallpapers"
+
+Communication
+	💬 Telegram	telegram-desktop
+
+Screen Capture
+	🖼️ Screenshot
+		🖼️ Take a Screenshot	scrot    "$HOME/pix/$(date '+%y%m%d-%H%M-%S').png"
+		🔲 Choose a region	scrot -s "$HOME/pix/$(date '+%y%m%d-%H%M-%S').png"
+	📹 OBS	obs
+
+Editing
+	📼 Kdenlive	kdenlive
+	🖌️ Gimp	gimp
+
+Settings
+	🦚 Qt5ct		qt5ct
+	🦚 Lxappearance	lxappearance
+
+System Actions
+	🔒 Lockdown	notify-send "Locking down" && sleep 2 && slock
+	🚪 Leave dwm	kill -TERM "$(pgrep -u "$USER" "\bdwm$")"
+	🪟 Restart dwm	kill -HUP  "$(pgrep -u "$USER" "\bdwm$")"
+	💤 Suspend	slock systemctl suspend
+	🐻 Hibernate	slock systemctl hibernate
+	🔃 Reboot	notify-send "Rebooting the system" && sleep 2 && reboot
+	💻 Shutdown	notify-send "Going down" && sleep 2 && shutdown -h now
+	📺 Display off	xset dpms force off
+	⏰ Uptime	notify-send "$(uptime -p)"
+EOF
